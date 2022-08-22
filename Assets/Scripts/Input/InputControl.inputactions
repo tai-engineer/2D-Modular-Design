@@ -1,8 +1,8 @@
 {
-    "name": "GameInput",
+    "name": "InputControl",
     "maps": [
         {
-            "name": "Player",
+            "name": "GamePlay",
             "id": "49db0f11-538c-4d3e-9145-a785dfabe969",
             "actions": [
                 {
@@ -26,7 +26,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD Keys",
+                    "name": "WASD",
                     "id": "b55c32ea-5b84-4d43-aaf7-73c029d89fec",
                     "path": "2DVector",
                     "interactions": "",
@@ -88,6 +88,34 @@
                     "processors": "",
                     "groups": "GamePlay",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu",
+            "id": "cfb01fb5-f6ce-450a-a8da-e8166e21b944",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "cf7cdfa6-1448-4957-8dbc-a51728367a83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "726bfbd4-8030-4b15-a54c-345da6b168f7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
