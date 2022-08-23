@@ -43,19 +43,21 @@ public class KeyRebindingRuntime : MonoBehaviour
 
     void RebindComplete(int bindingIndex)
     {
-        _rebindingOperation.Dispose();
-        _action.Enable();
-
         _displayText.text = InputControlPath.ToHumanReadableString(_action.bindings[bindingIndex].effectivePath,
             InputControlPath.HumanReadableStringOptions.OmitDevice);
+        CleanUp();
     }
 
     void RebindCancel(int bindingIndex)
-    {
-        _rebindingOperation.Dispose();
-        _action.Enable();
-
+    {        
         _displayText.text = _currentBindingText;
+        CleanUp();
     }
 
+    void CleanUp()
+    {
+        _action.Enable();
+        _rebindingOperation.Dispose();
+        _rebindingOperation = null;
+    }
 }
