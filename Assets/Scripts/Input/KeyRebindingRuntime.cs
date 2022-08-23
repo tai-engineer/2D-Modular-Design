@@ -8,23 +8,19 @@ public class KeyRebindingRuntime : MonoBehaviour
 
     InputAction _action;
     [SerializeField] string _actionName;
-    [SerializeField] GameObject _currentBindingGO;
-    [SerializeField] GameObject _rebindingGO;
+    [SerializeField] TMP_Text _displayText;
 
-    TMP_Text _rebindingText;
+    string _currentBindingText;
     void Start()
     {
         _action = InputManager.instance.inputControl.FindAction(_actionName);
-        _rebindingText = _rebindingGO.GetComponent<TMP_Text>();
-
-        _currentBindingGO.SetActive(true);
-        _rebindingGO.SetActive(false);
     }
     public void StartRebinding(int bindingIndex)
     {
         _action.Disable();
-        _currentBindingGO.SetActive(false);
-        _rebindingGO.SetActive(true);
+
+        _currentBindingText = InputControlPath.ToHumanReadableString(_action.bindings[bindingIndex].effectivePath,
+            InputControlPath.HumanReadableStringOptions.OmitDevice);
 
         var index = 0;
         if (bindingIndex == -1)
@@ -47,20 +43,19 @@ public class KeyRebindingRuntime : MonoBehaviour
 
     void RebindComplete(int bindingIndex)
     {
-        _rebindingText.text = InputControlPath.ToHumanReadableString(_action.bindings[bindingIndex].effectivePath,
-            InputControlPath.HumanReadableStringOptions.OmitDevice);
-
         _rebindingOperation.Dispose();
         _action.Enable();
+
+        _displayText.text = InputControlPath.ToHumanReadableString(_action.bindings[bindingIndex].effectivePath,
+            InputControlPath.HumanReadableStringOptions.OmitDevice);
     }
 
     void RebindCancel(int bindingIndex)
     {
-        _currentBindingGO.SetActive(true);
-        _rebindingGO.SetActive(false);
-
         _rebindingOperation.Dispose();
         _action.Enable();
+
+        _displayText.text = _currentBindingText;
     }
 
 }
