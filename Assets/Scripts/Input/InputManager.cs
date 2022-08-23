@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Input
+namespace GameInput
 { 
     public class InputManager : MonoBehaviour
     {
@@ -21,10 +21,10 @@ namespace Input
             }
 
             if(inputControl == null)
-                inputControl = new InputControl();
+                inputControl = new GameInputControl();
             inputControl.GamePlay.Enable();
         }
 
-        public InputControl inputControl { get; private set; }
+        public GameInputControl inputControl { get; private set; }
     }
 }

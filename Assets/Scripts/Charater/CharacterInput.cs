@@ -1,7 +1,7 @@
 using UnityEngine;
 
-using Input;
-public class CharacterInput : MonoBehaviour, InputControl.IGamePlayActions
+using GameInput;
+public class CharacterInput : MonoBehaviour, GameInputControl.IGamePlayActions
 {
     ICharacterMove _characterPhysic;
     void Awake()

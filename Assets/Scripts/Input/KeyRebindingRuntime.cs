@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Input;
+using GameInput;
 using TMPro;
 public class KeyRebindingRuntime : MonoBehaviour
 {
