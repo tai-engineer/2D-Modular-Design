@@ -309,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a43a21085b7abc4d88fcdd97235d2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionName: Jump
+  actionName: Jump
+  bindingIndex: 0
   _displayText: {fileID: 148335914}
 --- !u!1 &519420028
 GameObject:
@@ -1064,7 +1065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a43a21085b7abc4d88fcdd97235d2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionName: Move
+  actionName: Move
+  bindingIndex: 3
   _displayText: {fileID: 1072485290}
 --- !u!1 &1403152100
 GameObject:
@@ -1669,7 +1671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a43a21085b7abc4d88fcdd97235d2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionName: Move
+  actionName: Move
+  bindingIndex: 4
   _displayText: {fileID: 1710730505}
 --- !u!1 &1757651014
 GameObject:

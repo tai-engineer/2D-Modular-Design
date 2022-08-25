@@ -93,7 +93,7 @@ public class KeyRebindingRuntime : MonoBehaviour
             var action = InputManager.instance.inputControl.FindAction(rebindAction.actionName);
             if (action.bindings[rebindAction.bindingIndex].effectivePath == _action.bindings[bindingIndex].effectivePath)
             {
-                action.ChangeBinding(rebindAction.bindingIndex).Erase();
+                action.ApplyBindingOverride(rebindAction.bindingIndex, "");
                 rebindAction.UpdateDisplayUI("");
             }
         }
